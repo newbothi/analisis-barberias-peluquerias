@@ -1,0 +1,28 @@
+# Secretos: token, IDs y conexión
+.env
+
+# Entorno y caché de Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.pytest_tmp/
+.ipynb_checkpoints/
+
+# Salidas locales (logs con tu usuario de Instagram y respuestas crudas de la API)
+logs/
+salida_prueba/
+
+# Reportes del control de calidad (pueden nombrar posts y cuentas)
+reportes/
+
+# Datos fila a fila de Instagram y lista de cuentas: no se publican
+# (términos de Meta, y los captions mencionan a personas con su usuario)
+data/posts_features.csv
+data/cuentas_resumen.csv
+data/predicciones_validacion.csv
+data/barberias_santiago.csv
+
+# Dashboard: el .pbix guarda una copia de todos los datos importados
+powerbi/datos/
+*.pbix

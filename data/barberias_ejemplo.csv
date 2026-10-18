@@ -1,0 +1,4 @@
+nombre,comuna,direccion,username,estado,nota,fuente
+Barbería Ejemplo,Providencia,Calle Ficticia 123,barberia.ejemplo,encontrado,,Google Maps
+Otra Barbería,Ñuñoa,Avenida Inventada 456,otra.barberia,dudoso,Había dos cuentas posibles,Búsqueda en Google
+Barbería Sin Cuenta,Santiago Centro,Pasaje Imaginario 789,,no_encontrado,Sin Instagram identificable,Google Maps

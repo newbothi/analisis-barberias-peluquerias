@@ -1,0 +1,78 @@
+{
+  "modelo": "Huber (lineal robusta)",
+  "features": [
+    "log_seguidores",
+    "es_reel",
+    "es_carrusel",
+    "tiene_llamado_accion",
+    "menciona_precio_promo",
+    "tiene_pregunta",
+    "es_fin_de_semana",
+    "franja_tarde",
+    "franja_noche",
+    "franja_madrugada",
+    "log_largo_texto",
+    "log_hashtags",
+    "log_emojis",
+    "posts_ultimos_7_dias",
+    "nivel_reciente"
+  ],
+  "target": "log_likes = ln(1 + likes)",
+  "nivel_reciente": "promedio de log_likes de los 20 posts anteriores de la cuenta; si no hay, 3.3314 (promedio global)",
+  "ventana_nivel": 20,
+  "promedio_global_log_likes": 3.331377225021862,
+  "entrenado_con_posts": 1292,
+  "cuentas": 19,
+  "metricas_validacion_temporal": {
+    "posts": 646.0,
+    "MAE": 0.6874592717540821,
+    "error_tipico_x": 1.988656473442991,
+    "MAE_sin_virales": 0.6286464475986949,
+    "MedAE": 0.5173941437131253,
+    "MAE_por_cuenta": 0.6316887248027339,
+    "R2": 0.43692640834448127
+  },
+  "metricas_referencia_nivel_reciente": {
+    "posts": 646.0,
+    "MAE": 0.696858569076743,
+    "error_tipico_x": 2.0074365684948634,
+    "MAE_sin_virales": 0.6402264502202336,
+    "MedAE": 0.5310855890467185,
+    "MAE_por_cuenta": 0.6563684272265984,
+    "R2": 0.4319120004522763
+  },
+  "fecha_entrenamiento": "2026-10-18T00:18:36",
+  "versiones": {
+    "python": "3.13.5",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "numpy": "2.5.4"
+  },
+  "control_calidad": [
+    {
+      "nombre": "supera_referencia",
+      "aprobado": true,
+      "detalle": "MAE 0.687 vs 0.697 de la referencia (+1.3%)"
+    },
+    {
+      "nombre": "explica_variacion",
+      "aprobado": true,
+      "detalle": "R² = 0.437"
+    },
+    {
+      "nombre": "no_empeora",
+      "aprobado": true,
+      "detalle": "MAE 0.687 vs 0.687 del modelo anterior (+0.0%, máximo +5%); el anterior se entrenó con 1292 posts"
+    },
+    {
+      "nombre": "predicciones_validas",
+      "aprobado": true,
+      "detalle": "1292 predicciones entre 0.04 y 5.82"
+    },
+    {
+      "nombre": "coeficientes_finitos",
+      "aprobado": true,
+      "detalle": "15 coeficientes finitos"
+    }
+  ]
+}

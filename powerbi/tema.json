@@ -1,0 +1,34 @@
+{
+  "name": "Barberías Santiago",
+  "dataColors": ["#2A78D6", "#EB6834", "#1BAF7A", "#8A8984", "#E34948", "#52514E"],
+  "background": "#FCFCFB",
+  "foreground": "#0B0B0B",
+  "tableAccent": "#2A78D6",
+  "good": "#2A78D6",
+  "neutral": "#C9C8C3",
+  "bad": "#E34948",
+  "maximum": "#2A78D6",
+  "center": "#F0EFEC",
+  "minimum": "#E34948",
+  "null": "#E6E5E1",
+  "textClasses": {
+    "callout": { "fontSize": 28, "fontFace": "Segoe UI Semibold", "color": "#0B0B0B" },
+    "title": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#0B0B0B" },
+    "header": { "fontSize": 12, "fontFace": "Segoe UI Semibold", "color": "#0B0B0B" },
+    "label": { "fontSize": 10, "fontFace": "Segoe UI", "color": "#52514E" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#FCFCFB" } } }],
+        "border": [{ "show": false }],
+        "valueAxis": [{ "gridlineColor": { "solid": { "color": "#E6E5E1" } } }]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [{ "color": { "solid": { "color": "#FCFCFB" } }, "transparency": 0 }]
+      }
+    }
+  }
+}

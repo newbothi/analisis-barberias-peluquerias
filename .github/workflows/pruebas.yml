@@ -1,0 +1,32 @@
+# Integración continua: en cada push y pull request, GitHub instala el proyecto en una máquina limpia y corre las
+# pruebas (datos sintéticos, escaneo de privacidad y controles de calidad). No usa la API de Instagram, SQL Server
+# ni datos reales: esos no están en el repositorio.
+name: Pruebas
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Correr las pruebas
+        run: python -m pytest -q -rs
